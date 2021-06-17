@@ -1,38 +1,193 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  background: #020230;
+  color: white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+  width: 75%;
+  background: url("./assets/bg.jpg") center;
+  display: flex;
+  flex-direction: column;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top {
+  height: 50%;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bottom {
+  height: 50%;
+}
+.timer {
+  width: 70%;
+  height: 70%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+}
+.trivia {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+.question {
+  width: 80%;
+  background: linear-gradient(#100241, black);
+  border: 2px solid white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+.answers {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+.answer {
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 15px;
+  margin: 0 10px 20px 10px;
+  cursor: pointer;
+}
+.answer:hover,
+.active {
+  background: mediumblue;
+}
+.answer.correct {
+  animation: correct 3s ease forwards;
+}
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: green;
+  }
+}
+
+.answer.wrong {
+  animation: wrong 1.5s ease forwards;
+}
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  62%,
+  100% {
+    background: rgb(243, 23, 23);
+  }
+}
+
+.pyramid {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.moneyList {
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+}
+.moneyListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.moneyListItem.active {
+  background-color: teal;
+}
+.moneyListItemNumber {
+  font-size: 18px;
+  font-weight: 100;
+}
+.moneyListItemAmount {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.endText {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px;
+  background: darkblue;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.start {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.startInput {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.startInput:focus {
+  outline: none;
+}
+
+.startButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
 }
